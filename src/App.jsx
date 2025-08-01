@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import { generateMnemonic } from 'bip39';
+import SolanaWallet from "../components/solanaWallet";
 
 function App() {
 
@@ -12,9 +11,10 @@ function App() {
     <div>
       <input type='text' value={mnemonic}></input>
       <button onClick={async function() {
-        const mn = await generateMnemonic();
+        const mn = generateMnemonic();
         setMnemonic(mn);
       }}>Create Your Seed Phrase</button>
+      <SolanaWallet key={mnemonic}/>
     </div>
   )
 }
