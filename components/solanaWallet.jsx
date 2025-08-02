@@ -9,6 +9,7 @@ export default function SolanaWallet({ mnemonic }) {
   const [publicKeys, setPublicKeys] = useState([]);
 
   async function handleAddWallet() {
+
     if (!mnemonic) return;
     const seed = await mnemonicToSeed(mnemonic);
     const path = `m/44'/501'/${currentIndex}'/0'`;
@@ -44,6 +45,7 @@ export default function SolanaWallet({ mnemonic }) {
           ))
         )}
       </div>
+      
     </div>
   );
 }

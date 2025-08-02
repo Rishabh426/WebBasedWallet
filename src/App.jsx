@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import { generateMnemonic } from 'bip39';
 import SolanaWallet from '../components/solanaWallet';
+import EthWallet from '../components/ethWallet';
 
 function App() {
   const [mnemonic, setMnemonic] = useState("");
@@ -31,6 +32,7 @@ function App() {
         </div>
 
         {mnemonic && <SolanaWallet key={mnemonic} mnemonic={mnemonic} />}
+        {mnemonic && <EthWallet key={mnemonic} mnemonic={mnemonic} />}
       </div>
     </div>
   );
